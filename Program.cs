@@ -1,25 +1,29 @@
 ﻿using System;
-using System.Collections.Generic; // LİSTE İÇİN BUNU EKLEMEN ŞART!
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // 1. Listeyi Oluştur
+
         List<string> envanter = new List<string>();
+        envanter.Add("Sword");
+        envanter.Add("Bread");
+        envanter.Add("Key");
+        envanter.Add("Shield");
 
-        // 2. Eşyaları Ekle
-        envanter.Add("Kılıç");
-        envanter.Add("Kalkan");
-        envanter.Add("İksir");
+        foreach (string esya in envanter)
+        {
+            if (esya == "Key")
+            {
+                Console.WriteLine("Congrats, the door is open");
+            }
+            else
+            {
+                Console.WriteLine("You do not have a key in your inventory.");
+            }
+        }
 
-        // 3. Sayıyı Yazdır (.Count)
-        Console.WriteLine("Çantada şu an " + envanter.Count + " eşya var.");
-
-        // 4. İksiri Sil
-        envanter.Remove("İksir");
-
-        // 5. Son Durumu Yazdır
-        Console.WriteLine("İksir içildi. Kalan eşya sayısı: " + envanter.Count);
     }
 }
