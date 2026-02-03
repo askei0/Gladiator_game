@@ -8,42 +8,29 @@ class Program
     static void Main(string[] args)
     {
 
-        int health = 100;
-        int gold = 0;
+        Selamla();
+        BaslangicEkrani();
+        HasarVer("Goblin", 20);
+        HasarVer("Ejderha", 50);       
+        BitisEkrani();
 
-        List<string> dungeon = new List<string>();
-
-        dungeon.Add("Empty Room");
-        dungeon.Add("Enemy");
-        dungeon.Add("Treasure");
-        dungeon.Add("Trap");
-        dungeon.Add("Enemy");
-
-        foreach (string oda in dungeon)
-        {
-
-            if (oda == "Enemy")
-            {
-                health -= 20;
-                Console.WriteLine("An enemy appeared! You took damage.");
-            }
-            else if (oda == "Treasure")
-            {
-                gold += 50;
-                Console.WriteLine("You found a treasure chest! Gold added.");
-            }
-            else if (oda == "Trap")
-            {
-                health -=10;
-                Console.WriteLine("You stepped on a trap! Health decreased.");
-            }
-            else
-            {
-                Console.WriteLine("The room is clear. Moving on...");
-            }
-            
-        }
-        Console.WriteLine("Status -> HP: " + health + " | Gold: " + gold);
-
+    }
+    static void HasarVer(string dusmanAdi, int hasarMik)
+    {
+        Console.WriteLine(dusmanAdi + " sana saldirdi ve " + hasarMik + " hasar verdi!");
+    }
+    static void Selamla()
+    {
+        Console.WriteLine("Welcome to the system!");
+        Console.WriteLine("----------------------");
+    }
+    static void BaslangicEkrani()
+    {
+        Console.WriteLine("Test Oyunu, Version: 1.13. Baslamak icin enter a basiniz.");
+        Console.ReadLine();
+    }
+    static void BitisEkrani()
+    {
+        Console.WriteLine("Oyun bitti (yazilimci: askei)");
     }
 }
