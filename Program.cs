@@ -7,52 +7,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        int oyuncuCan = 100;
-        int dusmanCan = 100;
-        int turSayisi = 1;
-    
-        Selamla();
-        BaslangicEkrani();
+        //1. Askeri Üret (Nesne Yaratma)
+        Savasci asker1 = new Savasci(); // new komutu "Yarat" demektir.
+        asker1.Isim = "Barbar";
+        asker1.Can = 100;
+        asker1.HasarGucu = 25;
 
-        while (oyuncuCan > 0 && dusmanCan > 0)
-        {
-            Console.WriteLine("Tur: " + turSayisi);
-            int value = RastgeleHasarUret(10, 25);
-            dusmanCan -= value;
-            Console.WriteLine("Oyuncu dusmana " + value + " hasar verdi.");
-            if (dusmanCan <= 0)
-            {
-                Console.WriteLine("Dusman yenildi!");
-                break;
-            }
-            value = RastgeleHasarUret(5, 20);
-            oyuncuCan -= value;
-            Console.WriteLine("Dusman oyuncuya " + value + " hasar verdi.");
-            if (oyuncuCan <= 0)
-            {
-                Console.WriteLine("Oyuncu yenildi!");
-                break;
-            }
-            Console.WriteLine("Dusmanin kalan cani: " + dusmanCan);
-            Console.WriteLine("Oyuncunun kalan cani: " + oyuncuCan);
-            Console.WriteLine("2. tura gecmek icin enter'a basiniz.");
-            Console.ReadLine(); 
-            turSayisi++;
-            Console.WriteLine("----------------------");
-        }
+        // 2. Askeri Üret
+        Savasci asker2 = new Savasci();
+        asker2.Isim = "Okcu";
+        asker2.Can = 80;
+        asker2.HasarGucu = 40;
 
-            BitisEkrani();
-/*
-        HasarVer("Goblin", 20);
-        int value = RastgeleHasarUret(10, 30);
-        Console.WriteLine("Rastgele uretilen hasar: " + value);
-        int gelenSayi = KritikVurusYap(50);
-        Console.WriteLine("Kritik vuruş sonucu: " + gelenSayi);
-        HasarVer("Ejderha", 50);
-        BitisEkrani();
-*/
+        Console.WriteLine("1. Karakter: " + asker1.Isim + " | Can: " + asker1.Can + " | Hasar Gücü: " + asker1.HasarGucu);
+        Console.WriteLine("2. Karakter: " + asker2.Isim + " | Can: " + asker2.Can + " | Hasar Gücü: " + asker2.HasarGucu);
+
     }
-
+/*
     static int RastgeleHasarUret(int min, int max)
     {
         Random zar = new Random();
@@ -82,4 +53,13 @@ class Program
     {
         Console.WriteLine("Oyun bitti. Thanks for playing! :) (yazilimci: askei)");
     }
+    */
+}
+class Savasci
+{
+    //Properties
+    public string Isim;
+    public int Can;
+    public int HasarGucu;
+
 }
