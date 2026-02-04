@@ -12,11 +12,20 @@ class Program
         Selamla();
         BaslangicEkrani();
         HasarVer("Goblin", 20);
+        int value = RastgeleHasarUret(10, 30);
+        Console.WriteLine("Rastgele uretilen hasar: " + value);
         int gelenSayi = KritikVurusYap(50);
         Console.WriteLine("Kritik vuruş sonucu: " + gelenSayi);
-        HasarVer("Ejderha", 50);       
+        HasarVer("Ejderha", 50);
         BitisEkrani();
 
+    }
+
+    static int RastgeleHasarUret(int min, int max)
+    {
+        Random zar = new Random();
+        int value = zar.Next(min, max);
+        return value;
     }
     static int KritikVurusYap(int safHasar)
     {
