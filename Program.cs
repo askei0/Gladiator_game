@@ -11,17 +11,16 @@ class Program
         Savasci asker1 = new Savasci(); // new komutu "Yarat" demektir.
         asker1.Isim = "Barbar";
         asker1.Can = 100;
-        asker1.HasarGucu = 25;
+        asker1.HasarGucu = 25; 
 
         // 2. Askeri Üret
-        Savasci asker2 = new Savasci();
+        Savasci asker2 = new Savasci(); 
         asker2.Isim = "Okcu";
         asker2.Can = 80;
         asker2.HasarGucu = 40;
 
-        Console.WriteLine("1. Karakter: " + asker1.Isim + " | Can: " + asker1.Can + " | Hasar Gücü: " + asker1.HasarGucu);
-        Console.WriteLine("2. Karakter: " + asker2.Isim + " | Can: " + asker2.Can + " | Hasar Gücü: " + asker2.HasarGucu);
-
+        asker1.BilgiGoster();
+        asker2.BilgiGoster();
     }
 /*
     static int RastgeleHasarUret(int min, int max)
@@ -61,5 +60,9 @@ class Savasci
     public string Isim;
     public int Can;
     public int HasarGucu;
-
+    public void BilgiGoster()
+    {
+        // Kendi içindeki Isim ve Can değişkenlerini doğrudan kullanır.
+        Console.WriteLine("Karakter: " + Isim + " | Can: " + Can + " | Hasar Gücü: " + HasarGucu);
+    }
 }
